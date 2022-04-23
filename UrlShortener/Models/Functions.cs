@@ -14,8 +14,8 @@ namespace UrlShortener.Models
         {
             var values = SqlHelper.GetColumnValues($"Select * From Links Where ShortUrl='{shortUrl}'", "OriginalUrl");
             return values.Count > 0 ? values.First() : null;
-        } 
-        
+        }
+
         public static string AddNewLink(string url)
         {
             var shortUrl = GenerateShortUrl();
